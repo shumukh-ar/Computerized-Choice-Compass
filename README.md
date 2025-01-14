@@ -1,4 +1,4 @@
-# Automated Selection Compass
+# Computerized Choice Compass
 
 ## Project Overview
 The Automated Selection Compass is an online platform aimed at helping university students in the Computer Science department choose the most suitable major based on their interests and preferences. Through analytical surveys and advice from professors, the platform aims to guide students towards making informed academic and career decisions.
