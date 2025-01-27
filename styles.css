@@ -40,5 +40,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>
     <div class="contact-container">
         <center><img width="300" height="100" src="contact_us.ping" alt="شعار الصفحة"></center>
-      <h1>تواصل معنا</h1>
-      <p>اذا كان لديك اي استفسارات او تحتاج الى مساعدة , فلا تتردد في التواصل معنا<\p>
+        <h1>تواصل معنا</h1>
+        <p>اذا كان لديك اي استفسارات او تحتاج الى مساعدة , فلا تتردد في التواصل معنا<\p>
+
+        <!--Displaysuccess or error messages -->
+        <?php> if (!empty($message)):?>
+        <p style="color: green;"><>?php echo $error;?></p>
+        <?php endif; ?>
+        <?php if (empty($error)): ?>
+        <p style="color: green;"><>?php echo $error;?></p>
+        <?php endif; ?>
+
+        <from method="POST" action="">
+            <label for="name">الاسم الكامل:</label>
+            input type=id="name" name="name" required>
+
+   
