@@ -1,60 +1,44 @@
-body {
-  font-family: "Tahoma", sans-serif;
-  background-color: #eef2f3;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
+<?php
+session_start();
+require 'db_connect.php';
 
-h1 {
-  margin: 40px 0;
-  color: #005f73;
-}
 
-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  text-align: left;
-}
+$message = "" ; 
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #023047;
-}
 
-select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $fullName = $_POST['name'];
+    $email = $_POST['email'];
+    $messageText =$_POST['message']
 
-button {
-  background-color: #028090;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+   //Validate inputs
+  if(empty($fullName) || empty($email) || empty($messageText)){
+     $error = "جميع الحقول مطلوبة";}
+  else { // Insert the message into the database
+        $sql = "INSERT INTO ContactMessage (fullName , Email , message) VALUES (?,?,?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss",$fullNam, $email, $messageText);
 
-button:hover {
-  background-color: #026c77;
-}
+        if ($stmt-execute()){
+            $message ="تم ارسال رسالتك سيتم التواصل معك قريباً."}
+        else { 
+          $error = "حدث خطأ اثناء ارسال الرسالة. يرجى  المحاولة مرة اخرى ." ; }
+        }
+       
+  }
+    
+?>
 
-#result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #d00000;
-}
+<!DOCTYPE html>
+  <html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" conent="width=device-width, initial-scale=1.0">
+<title>تواصل معن </title>
+<link rel="stylesheet" herf="styles.css">
+</head>
+<body>
+    <div class="contact-container">
+        <center><img width="300" height="100" src="contact_us.ping" alt="شعار الصفحة"></center>
+      <h1>تواصل معنا</h1>
+      <p>اذا كان لديك اي استفسارات او تحتاج الى مساعدة , فلا تتردد في التواصل معنا<\p>
