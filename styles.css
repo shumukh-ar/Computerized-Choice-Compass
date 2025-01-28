@@ -1,0 +1,224 @@
+/* استيراد خط Amiri من Googalfonts */
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+/*اعدادات الجسم*/
+body{ 
+  font-family:'Amiri' , serf; /*الخط*/
+  background-color:  #E6E6E6; /* لون خلفية الصفحة */
+  display: flex;
+  justify-conent: center;
+  align-items: center;
+  height: 100vh;/*ارتفاع الصفحة*/
+  margin: 0;/*إزالة الهوامش*/
+  color: #444; /* لون النص */
+  direction: rtl; /*اتجاه النص من اليمين إلى اليسار*/
+  text-align: right; /*محاذاة النص الى اليمين*/
+}
+
+/*تنسيق مربعات المحتوى*/
+.survey-container{
+  background: #f5f3f3;/*لون خلفية المربع*/
+   padding: 30px; /* الحشوة */
+    border-radius: 15px; /* الزوايا الدائرية */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* ظل */
+    text-align: center; /* محاذاة النص إلى الوسط */
+    width: 400px; /* عرض ثابت */
+}
+
+
+/* تنسيق العناوين */
+h1 {
+    font-size: 26px; /* حجم الخط */
+    margin-bottom: 20px; /* المسافة السفلية */
+    color: #315340; /* لون النص */
+}
+
+/* تنسيق الفقرات */
+p {
+    font-size: 14px; /* حجم الخط */
+    margin-bottom: 20px; /* المسافة السفلية */
+    color: #666; /* لون النص */
+}
+
+/* تنسيق حقول الإدخال */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%; /* عرض كامل */
+    padding: 12px; /* حشوة داخلية */
+    margin: 10px 0; /* المسافة */
+    border: 1px solid #ccc; /* الحدود */
+    border-radius: 8px; /* الزوايا الدائرية */
+    box-sizing: border-box; /* احتساب الحشوة في العرض */
+    text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+/* تنسيق خيارات الاختيار */
+.radio-group {
+    display: flex; /* تخطيط مرن */
+    justify-content: center; /* محاذاة أفقياً إلى الوسط */
+    margin-bottom: 15px; /* المسافة */
+}
+
+/* تنسيق رابط "نسيت كلمة المرور؟" */
+.forgot-password {
+
+    margin: 10px 0; /* المسافة */
+}
+
+/* تنسيق الروابط */
+.forgot-password a,
+.login-link a {
+    color: #315340; /* لون الرابط */
+    text-decoration: none; /* إزالة التسطير */
+    font-size: 14px; /* حجم الخط */
+}
+
+/* تأثير الروابط عند التمرير */
+.forgot-password a:hover,
+.login-link a:hover {
+    text-decoration: underline; /* إضافة تسطير */
+}
+
+/* تنسيق الأزرار */
+.mybutton, button {
+    background-color: #315340; /* لون الزر */
+    color: white; /* لون النص */
+    padding: 12px; /* الحشوة */
+    border: none; /* إزالة الحدود */
+    border-radius: 8px; /* الزوايا الدائرية */
+    cursor: pointer; /* تغيير المؤشر */
+    width: 48%; /* عرض الزر */
+    font-size: 16px; /* حجم الخط */
+}
+
+/* تأثير الزر عند التمرير */
+.mybutton:hover {
+    background-color: #274a3d; /* لون عند التمرير */
+}
+/* تأثير الزر عند التمرير */
+button:hover {
+    background-color: #274a3d; /* لون عند التمرير */
+}
+/* تنسيق خيارات تذكّر كلمة المرور */
+.remember-me {
+    display: flex; /* تخطيط مرن */
+
+    margin: 10px 0; /* المسافة */
+    color: #444; /* لون النص */
+}
+
+/* تنسيق صفحة إنشاء حساب */
+.create-account-container {
+    background: #f5f3f3; /* لون خلفية المربع */
+    padding: 30px; /* الحشوة */
+    border-radius: 15px; /* الزوايا الدائرية */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* ظل */
+    text-align: center; /* محاذاة النص إلى الوسط */
+    width: 400px; /* عرض ثابت */
+    margin: 20px auto; /* محاذاة الوسط */
+}
+
+.create-account-container h1 {
+    font-size: 26px; /* حجم الخط */
+    margin-bottom: 20px; /* المسافة السفلية */
+    color: #315340; /* لون النص */
+}
+
+.create-account-container input {
+    width: 100%; /* عرض كامل */
+    padding: 12px; /* حشوة داخلية */
+    margin: 10px 0; /* المسافة */
+    border: 1px solid #ccc; /* الحدود */
+    border-radius: 8px; /* الزوايا الدائرية */
+    box-sizing: border-box; /* احتساب الحشوة في العرض */
+    text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+.create-account-container button {
+    background-color: #315340; /* لون الزر */
+    color: white; /* لون النص */
+    padding: 12px; /* الحشوة */
+    border: none; /* إزالة الحدود */
+    border-radius: 8px; /* الزوايا الدائرية */
+    cursor: pointer; /* تغيير المؤشر */
+    width: 100%; /* عرض الزر */
+    font-size: 16px; /* حجم الخط */
+    margin-top: 10px; /* المسافة العلوية */
+}
+
+.create-account-container button:hover {
+    background-color: #274a3d; /* لون عند التمرير */
+}
+
+.create-account-container .login-link {
+    text-align: center; /* محاذاة إلى الوسط */
+    margin-top: 15px; /* المسافة العلوية */
+}
+
+.create-account-container .login-link a {
+    color: #315340; /* لون الرابط */
+    text-decoration: none; /* إزالة التسطير */
+    font-size: 14px; /* حجم الخط */
+}
+
+.create-account-container .login-link a:hover {
+    text-decoration: underline; /* إضافة تسطير */
+}
+
+/* تنسيق صفحة الترحيب */
+.welcome-container {
+    margin: 20px auto; /* محاذاة الوسط */
+}
+
+/* تنسيق الأزرار في الأسفل */
+.navigation {
+    display: flex;
+    justify-content: space-between; /* توزيع الأزرار بالتساوي */
+    margin-top: 20px; /* المسافة العلوية */
+}
+
+/* إضافة مسافة بين الأزرار */
+.navigation button {
+    margin: 0 5px; /* مسافة جانبية بين الأزرار */
+}
+/* تنسيق حاوية الشعار */
+.logo-container {
+    text-align: center; /* محاذاة الشعار إلى الوسط */
+    margin-bottom: 20px; /* المسافة السفلية */
+}
+
+/* تنسيق الشعار */
+.logo {
+    max-width: 100px; /* عرض الشعار */
+    height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+}
+
+/* Add this to your existing styles.css */
+
+/* تنسيق حاوية الاتصال */
+.contact-container {
+    background: #f5f3f3; /* لون خلفية المربع */
+    padding: 30px; /* الحشوة */
+    border-radius: 15px; /* الزوايا الدائرية */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* ظل */
+    text-align: right; /* محاذاة النص إلى اليمين */
+    width: 400px; /* عرض ثابت */
+    /* You can adjust this width as needed */
+}
+
+/* تنسيق حقل الرسالة */
+textarea {
+    width: 100%; /* عرض كامل */
+    padding: 12px; /* حشوة داخلية */
+    margin: 10px 0; /* المسافة */
+    border: 1px solid #ccc; /* الحدود */
+    border-radius: 8px; /* الزوايا الدائرية */
+    box-sizing: border-box; /* احتساب الحشوة في العرض */
+    text-align: right; /* محاذاة النص إلى اليمين */
+    resize: vertical; /* يسمح بتغيير الحجم عمودياً فقط */
+}
+
+/* إذا كنت ترغب في ضبط عرض textarea بشكل أكبر، يمكنك استخدام عرض ثابت */
+
+}
