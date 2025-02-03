@@ -15,16 +15,18 @@ if (!isset($_SESSION['responses'])) {
 if (!isset($_SESSION['specialization_counts'])) {
     $_SESSION['specialization_counts'] = [
         'software_engineering' => 0,
-        'artificial_intelligence' => 0,
         'network_engineering' => 0,
+        'artificial_intelligence' => 0,
         'information_systems' => 0,
     ];
 }
+
 
 // Fetch all surveys from the database
 $sql = "SELECT * FROM Surveys";
 $result = $conn->query($sql);
 $surveys = $result->fetch_all(MYSQLI_ASSOC);
+
 
 // Get the current survey ID from the URL (default to the first survey)
 $surveyID = isset($_GET['surveyID']) ? (int)$_GET['surveyID'] : $surveys[0]['SurveyID'];
@@ -36,6 +38,7 @@ $stmt->bind_param("i", $surveyID);
 $stmt->execute();
 $result = $stmt->get_result();
 $questions = $result->fetch_all(MYSQLI_ASSOC);
+
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,22 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['responses'][$questionID] = $responseValue;
 
             // Update specialization counts based on the question ID
-            if ($questionID == 1 || $questionID == 2 || $questionID == 3) {
+            if ($questionID >= 1 && $questionID <= 5) {
                 // Questions related to هندسة البرمجيات (Software Engineering)
                 if ($responseValue === 'yes') {
                     $_SESSION['specialization_counts']['software_engineering']++;
                 }
-            } elseif ($questionID == 4 || $questionID == 5 || $questionID == 6) {
-                // Questions related to الذكاء الاصطناعي (Artificial Intelligence)
-                if ($responseValue === 'yes') {
-                    $_SESSION['specialization_counts']['artificial_intelligence']++;
-                }
-            } elseif ($questionID == 7 || $questionID == 8 || $questionID == 9) {
+            } elseif ($questionID >= 6 && $questionID <= 10) {
                 // Questions related to هندسة الشبكات (Network Engineering)
                 if ($responseValue === 'yes') {
                     $_SESSION['specialization_counts']['network_engineering']++;
                 }
-            } elseif ($questionID == 10 || $questionID == 11 || $questionID == 12) {
+            } elseif ($questionID >= 11 && $questionID <= 15) {
+                // Questions related to الذكاء الاصطناعي (Artificial Intelligence)
+                if ($responseValue === 'yes') {
+                    $_SESSION['specialization_counts']['artificial_intelligence']++;
+                }
+            } elseif ($questionID >= 16 && $questionID <= 20) {
                 // Questions related to نظم المعلومات (Information Systems)
                 if ($responseValue === 'yes') {
                     $_SESSION['specialization_counts']['information_systems']++;
@@ -74,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
+
 
     // Redirect to the next survey or a completion page
     $nextSurveyID = $surveyID + 1;
@@ -96,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ar">
