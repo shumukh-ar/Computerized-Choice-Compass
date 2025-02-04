@@ -5,7 +5,6 @@ This repository contains the source code for the **Computerized Choice Compass**
 ## Features
 - **Create and Customize Surveys**: Easily create surveys with multiple question types to gather relevant information from users.
 - **Specialization Recommendations**: The system analyzes survey responses and suggests the most suitable academic specializations for each student.
-- **Job Opportunity Insights**: Displays potential career paths and job opportunities available after graduation for each recommended specialization.
 - **User-Friendly Interface**: Intuitive and easy-to-navigate design for both survey creators and participants.
 - **Responsive Design**: The website is fully responsive, ensuring a seamless experience across devices (desktop, tablet, and mobile).
 
